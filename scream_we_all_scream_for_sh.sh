@@ -1,18 +1,20 @@
-function PASSALLERRORS(){
-  # per request:
-  say 'MICHAEL SCOTT "no GOD NOO"'
-  ## future case, support different voices by changing mac defaults.
-  say $@
+## Adding these three functions into your bashrc will enable the functionality to persist.
+PASSALLERRORS() {
+  echo $@
+  echo $2
+  echo "an error occoured";say 'MICHAEL SCOTT "no GOD NOO"';say $@;
 }
-# built_in
 
-# joyce broke the build -- rabbits.
-# back in the day, wifi rabbits... little plastic things 
-# they had swivelly ears ... you could pass simple commands over http
-# if the test did not pass, say ${name} broke the build, broke the build.
+SUCESS(){
+}
+FAIL(){
+}
 
-## THE DREAM
-## function stderr {
-##   builtin stderr $@ 
-##   doSomeThingElse
-## }
+ASKERROR(){
+  if [[ $? == 0 ]];
+    then echo "true" && SUCCESS $1;
+    else echo "false" && FAIL $2;
+  fi
+}
+
+PROMPT_COMMAND=ASKERROR  ## ACCESSABILITY!!!! 
