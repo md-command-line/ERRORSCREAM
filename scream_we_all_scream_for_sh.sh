@@ -5,3 +5,8 @@ function PASSALLERRORS(){
   say $*
 }
 # built_in
+
+# joyce broke the build -- rabbits.
+# back in the day, wifi rabbits... little plastic things 
+# they had swivelly ears ... you could pass simple commands over http
+# if the test did not pass, say ${name} broke the build, broke the build.
