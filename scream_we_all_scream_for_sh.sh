@@ -1,13 +1,8 @@
 ## Adding these three functions into your bashrc will enable the functionality to persist.
-PASSALLERRORS() {
+function PASSALLERRORS() {
   echo $@
   echo $2
   echo "an error occoured";say 'MICHAEL SCOTT "no GOD NOO"';say $@;
-}
-
-SUCESS(){
-}
-FAIL(){
 }
 
 ASKERROR(){
@@ -17,4 +12,8 @@ ASKERROR(){
   fi
 }
 
-PROMPT_COMMAND=ASKERROR  ## ACCESSABILITY!!!! 
+# check_errs() {  
+#   PASSALLERRORS ${1} ${2}
+# }
+
+PROMPT_COMMAND=check_errs  ## ACCESSABILITY!!!! 
